@@ -1,0 +1,95 @@
+https://github.com/microsoft/vcpkg(HEAD)에서 레지스트리 정보를 가져오는 중...
+삼중항 x64-windows에 대한 컴파일러 해시 감지 중...
+컴파일러 찾음: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.43.34808/bin/Hostx64/x64/cl.exe
+빌드 및 설치할 패키지:
+  * egl-registry:x64-windows@2024-01-25 -- git+https://github.com/microsoft/vcpkg@d883db43133dd223c4ffdbef4193943f6784d43a
+    gl3w:x64-windows@2018-05-31#5 -- git+https://github.com/microsoft/vcpkg@a79b7a69f540bf9cd71464cabdfdd5cd67e72072
+    glfw3:x64-windows@3.4#1 -- git+https://github.com/microsoft/vcpkg@d4bbd4f27c2ca619f57778985120cddcedadb1cc
+    glm:x64-windows@1.0.1#3 -- git+https://github.com/microsoft/vcpkg@f8b09027afe97c717e95bd81d1d4f37c057d1c78
+  * opengl-registry:x64-windows@2024-02-10#1 -- git+https://github.com/microsoft/vcpkg@22f7aa58ee78c9f0db904b6251e9265f2be26f9d
+  * vcpkg-cmake:x64-windows@2024-04-23 -- git+https://github.com/microsoft/vcpkg@e74aa1e8f93278a8e71372f1fa08c3df420eb840
+  * vcpkg-cmake-config:x64-windows@2024-05-23 -- git+https://github.com/microsoft/vcpkg@97a63e4bc1a17422ffe4eff71da53b4b561a7841
+이 작업을 완료하기 위해 추가 패키지(*)가 수정됩니다.
+978 ms 후 C:\Users\user-pc\AppData\Local\vcpkg\archives의 패키지 5개를 복원했습니다. 자세한 내용을 보려면 --debug를 사용하세요.
+1/7 vcpkg-cmake-config:x64-windows@2024-05-23을(를) 설치하는 중...
+vcpkg-cmake-config:x64-windows 처리 경과 시간: 12.3 ms
+vcpkg-cmake-config:x64-windows 패키지 ABI: 8018ddb75662eb5137565fc0885d410d92ea7630c82324413555256155271a29
+2/7 vcpkg-cmake:x64-windows@2024-04-23을(를) 설치하는 중...
+vcpkg-cmake:x64-windows 처리 경과 시간: 31.4 ms
+vcpkg-cmake:x64-windows 패키지 ABI: 2171ac26f8baee9b4722e3f9b3fcb061c6a37ca534c6fe12f936571265059e9c
+3/7 egl-registry:x64-windows@2024-01-25을(를) 설치하는 중...
+egl-registry:x64-windows 처리 경과 시간: 27.6 ms
+egl-registry:x64-windows 패키지 ABI: e425fdfdaa060b0a851f5b6760fb2a66386fb5f462869c4a7598a821c16176b8
+4/7 opengl-registry:x64-windows@2024-02-10#1을(를) 설치하는 중...
+opengl-registry:x64-windows 처리 경과 시간: 57.5 ms
+opengl-registry:x64-windows 패키지 ABI: f42ef7cdd12ae30e4120d30305f7f3b51139d18ded21c78da9bdbcbf18745a7b
+5/7 gl3w:x64-windows@2018-05-31#5을(를) 설치하는 중...
+gl3w:x64-windows@2018-05-31#5 구축 중...
+C:\Users\user-pc\AppData\Local\vcpkg\registries\git-trees\a79b7a69f540bf9cd71464cabdfdd5cd67e72072: info: Git 레지스트리에서 설치 git+https://github.com/microsoft/vcpkg@a79b7a69f540bf9cd71464cabdfdd5cd67e72072
+Downloading https://github.com/skaslev/gl3w/archive/99ed321100d37032cb6bfa7dd8dea85f10c86132.tar.gz -> skaslev-gl3w-99ed321100d37032cb6bfa7dd8dea85f10c86132.tar.gz
+Successfully downloaded skaslev-gl3w-99ed321100d37032cb6bfa7dd8dea85f10c86132.tar.gz
+-- Extracting source C:/Gits/vcpkg/downloads/skaslev-gl3w-99ed321100d37032cb6bfa7dd8dea85f10c86132.tar.gz
+-- Applying patch 0001-enable-shared-build.patch
+-- Using source at C:/Gits/vcpkg/buildtrees/gl3w/src/5f10c86132-7e24c6e824.clean
+-- Found external ninja('1.12.1').
+-- Configuring x64-windows
+-- Building x64-windows-dbg
+-- Building x64-windows-rel
+-- Installing: C:/Gits/vcpkg/packages/gl3w_x64-windows/share/gl3w/copyright
+-- 빌드 후 유효성 검사를 수행하는 중
+백그라운드에서 이진 캐시를 1 gl3w:x64-windows@2018-05-31#5 제출을 시작하는 중
+gl3w:x64-windows 처리 경과 시간: 7.9 s
+gl3w:x64-windows 패키지 ABI: 669d58fd51245f6cd2e80d5b9ed6128f87c4246d34c69f7e8e742e780d454f20
+6/7 glfw3:x64-windows@3.4#1을(를) 설치하는 중...
+glfw3:x64-windows@3.4#1 구축 중...
+C:\Users\user-pc\AppData\Local\vcpkg\registries\git-trees\d4bbd4f27c2ca619f57778985120cddcedadb1cc: info: Git 레지스트리에서 설치 git+https://github.com/microsoft/vcpkg@d4bbd4f27c2ca619f57778985120cddcedadb1cc
+Downloading https://github.com/glfw/glfw/archive/3.4.tar.gz -> glfw-glfw-3.4.tar.gz
+Successfully downloaded glfw-glfw-3.4.tar.gz
+-- Extracting source C:/Gits/vcpkg/downloads/glfw-glfw-3.4.tar.gz
+-- Using source at C:/Gits/vcpkg/buildtrees/glfw3/src/3.4-2448ff4533.clean
+-- Found external ninja('1.12.1').
+-- Configuring x64-windows
+-- Building x64-windows-dbg
+-- Building x64-windows-rel
+-- Fixing pkgconfig file: C:/Gits/vcpkg/packages/glfw3_x64-windows/lib/pkgconfig/glfw3.pc
+-- Using cached msys2-mingw-w64-x86_64-pkgconf-1~2.3.0-1-any.pkg.tar.zst
+-- Using cached msys2-msys2-runtime-3.5.4-2-x86_64.pkg.tar.zst
+-- Using msys root at C:/Gits/vcpkg/downloads/tools/msys2/21caed2f81ec917b
+-- Fixing pkgconfig file: C:/Gits/vcpkg/packages/glfw3_x64-windows/debug/lib/pkgconfig/glfw3.pc
+-- Installing: C:/Gits/vcpkg/packages/glfw3_x64-windows/share/glfw3/copyright
+-- 빌드 후 유효성 검사를 수행하는 중
+백그라운드에서 이진 캐시를 1 glfw3:x64-windows@3.4#1 제출을 시작하는 중
+glfw3:x64-windows 처리 경과 시간: 9.6 s
+glfw3:x64-windows 패키지 ABI: 424b7e0599ab11b23a0ff0eea647e3221252c95641e732254b86f89edf056ba1
+237 ms 1 이진 캐시에 gl3w:x64-windows@2018-05-31#5 제출을 완료했습니다.
+7/7 glm:x64-windows@1.0.1#3을(를) 설치하는 중...
+glm:x64-windows 처리 경과 시간: 528 ms
+glm:x64-windows 패키지 ABI: 5efbed7738b568f5f2625195d1b20a80505ba8f119ac0d69566f154789695ec1
+총 설치 시간: 18 s
+gl3w은 CMake 대상을 제공합니다.
+
+  # 이 값은 추론적으로 생성되며 올바르지 않을 수 있습니다.
+  find_package(gl3w CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE unofficial::gl3w::gl3w)
+
+glfw3은 CMake 대상을 제공합니다.
+
+  # 이 값은 추론적으로 생성되며 올바르지 않을 수 있습니다.
+  find_package(glfw3 CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE glfw)
+
+glfw3은(는) pkg-config 모듈을 제공합니다.
+
+  # A multi-platform library for OpenGL, window and input
+  glfw3
+
+The package glm provides CMake targets:
+
+    find_package(glm CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE glm::glm)
+
+    # Or use the header-only version
+    find_package(glm CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE glm::glm-header-only)
+
+199 ms 1 이진 캐시에 glfw3:x64-windows@3.4#1 제출을 완료했습니다.

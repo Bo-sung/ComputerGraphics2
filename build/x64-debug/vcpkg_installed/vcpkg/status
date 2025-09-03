@@ -1,0 +1,62 @@
+Package: vcpkg-cmake-config
+Version: 2024-05-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 8018ddb75662eb5137565fc0885d410d92ea7630c82324413555256155271a29
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2024-04-23
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2171ac26f8baee9b4722e3f9b3fcb061c6a37ca534c6fe12f936571265059e9c
+Status: install ok installed
+
+Package: egl-registry
+Version: 2024-01-25
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e425fdfdaa060b0a851f5b6760fb2a66386fb5f462869c4a7598a821c16176b8
+Description: EGL API and Extension Registry
+Status: install ok installed
+
+Package: opengl-registry
+Version: 2024-02-10
+Port-Version: 1
+Depends: egl-registry
+Architecture: x64-windows
+Multi-Arch: same
+Abi: f42ef7cdd12ae30e4120d30305f7f3b51139d18ded21c78da9bdbcbf18745a7b
+Description: OpenGL, OpenGL ES, and OpenGL ES-SC API and Extension Registry
+Status: install ok installed
+
+Package: gl3w
+Version: 2018-05-31
+Port-Version: 5
+Depends: egl-registry, opengl-registry, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 669d58fd51245f6cd2e80d5b9ed6128f87c4246d34c69f7e8e742e780d454f20
+Description: Simple OpenGL core profile loading
+Status: install ok installed
+
+Package: glfw3
+Version: 3.4
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 424b7e0599ab11b23a0ff0eea647e3221252c95641e732254b86f89edf056ba1
+Description: GLFW is a free, Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan application development. It provides a simple, platform-independent API for creating windows, contexts and surfaces, reading input, handling events, etc.
+Status: install ok installed
+
+Package: glm
+Version: 1.0.1
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5efbed7738b568f5f2625195d1b20a80505ba8f119ac0d69566f154789695ec1
+Description: OpenGL Mathematics (GLM)
+Status: install ok installed
+
