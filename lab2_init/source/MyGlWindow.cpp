@@ -68,47 +68,60 @@ void MyGlWindow::setupBuffer()
 		1.0, 1.0, 1.0,
 	};
 
-	// // 이제 삼각형에 대한 정보를 CPU가 아닌 GPU에 보냄
-	// // 삼각형이 가진 속성 정보 : 위치, 생성
-	// // VAO 생성.(Vertex Array Object)
-	// glGenVertexArrays(1, &vaoHandle);	// 컨테이너 생성
-	// glBindVertexArray(vaoHandle);		// 바인드 : 여러개의 VAO 중에 어떤거 사용할지
-	// // 바인드 : activate의 의미. 난 앞으로 여기다 뭔가 작업을 할래
-	// // VBO 생성 (Vertex Buffer Object) : vertex의 속성 정보 저장
-	// GLuint vboPosition;
-	// glGenBuffers(1, &vboPosition); // vertex 위치 정보를 저장하기 위한 vbo
-	// glBindBuffer(GL_ARRAY_BUFFER, vboPosition); // vbo바인딩 : activate
 
-	// // 데이터를 메인 메모리 -> GPU 메모리로 보낸 후 할당 : 마지막 : USAGE
-	// glBufferData(GL_ARRAY_BUFFER, sizeof(vertexPosition), &vertexPosition, GL_STATIC_DRAW);
-	// glVertexAttribPointer(		// GPU 한태 메머리에 얼라온 데이터 해것 방법을 알려줌
-	// 	0,			// 속성 해석
-	// 	4,			// 데이터 수 (vertex 당)
-	// 	GL_FLOAT,	// 데이터 타입
-	// 	GL_FALSE,	// 정규화 여부
-	// 	0,			// STRIDE
-	// 	0			// OFFSET
-	// );
-	// glEnableVertexAttribArray(0);	// 속성 0번 활성화
+	GLushort cube_elements[] = {
+	0, 1, 2,	2, 3, 0,	1, 5, 6,
+	6, 2, 1,	7, 6, 5,	5, 4, 7,
+	4, 0, 3,	3, 7, 4,	4, 5, 1,
+	1, 0, 4,	3, 2, 6,	6, 7, 3,
+	};
 
-	// GLuint vboColor;
-	// glGenBuffers(1, &vboColor); // vertex 색상 정보를 저장하기 위한 vbo
-	// glBindBuffer(GL_ARRAY_BUFFER, vboColor); // vbo바인딩 : activate
+	// 이제 삼각형에 대한 정보를 CPU가 아닌 GPU에 보냄
+	// 삼각형이 가진 속성 정보 : 위치, 생성
+	// VAO 생성.(Vertex Array Object)
+	glGenVertexArrays(1, &vaoHandle);	// 컨테이너 생성
+	glBindVertexArray(vaoHandle);		// 바인드 : 여러개의 VAO 중에 어떤거 사용할지
+	// 바인드 : activate의 의미. 난 앞으로 여기다 뭔가 작업을 할래
+	// VBO 생성 (Vertex Buffer Object) : vertex의 속성 정보 저장
+	GLuint vboPosition;
+	glGenBuffers(1, &vboPosition); // vertex 위치 정보를 저장하기 위한 vbo
+	glBindBuffer(GL_ARRAY_BUFFER, vboPosition); // vbo바인딩 : activate
 
-	// // 데이터를 메인 메모리 -> GPU 메모리로 보낸 후 할당 : 마지막 : USAGE
-	// glBufferData(GL_ARRAY_BUFFER, sizeof(vertexColor), &vertexColor, GL_STATIC_DRAW);
-	// glVertexAttribPointer(		// GPU 한태 메머리에 얼라온 데이터 해석 방법을 알려줌
-	// 	1,			// 속성 번호
-	// 	3,			// 데이터 수 (vertex 당)
-	// 	GL_FLOAT,	// 데이터 타입
-	// 	GL_FALSE,	// 정규화 여부
-	// 	0,			// STRIDE
-	// 	0			// OFFSET
-	// );
-	// glEnableVertexAttribArray(1);	// 속성 1번 활성화
+	// 데이터를 메인 메모리 -> GPU 메모리로 보낸 후 할당 : 마지막 : USAGE
+	glBufferData(GL_ARRAY_BUFFER, sizeof(cube_vertices), &cube_vertices, GL_STATIC_DRAW);
+	glVertexAttribPointer(		// GPU 한태 메머리에 얼라온 데이터 해것 방법을 알려줌
+		0,			// 속성 해석
+		3,			// 데이터 수 (vertex 당)
+		GL_FLOAT,	// 데이터 타입
+		GL_FALSE,	// 정규화 여부
+		0,			// STRIDE
+		0			// OFFSET
+	);
+	glEnableVertexAttribArray(0);	// 속성 0번 활성화
 
-	// //vao unbound
-	// glBindVertexArray(0);		// 현재 사용중인 vao unbound (0을 넣으면 됨)
+	GLuint vboColor;
+	glGenBuffers(1, &vboColor); // vertex 색상 정보를 저장하기 위한 vbo
+	glBindBuffer(GL_ARRAY_BUFFER, vboColor); // vbo바인딩 : activate
+
+	// 데이터를 메인 메모리 -> GPU 메모리로 보낸 후 할당 : 마지막 : USAGE
+	glBufferData(GL_ARRAY_BUFFER, sizeof(cube_colors), &cube_colors, GL_STATIC_DRAW);
+	glVertexAttribPointer(		// GPU 한태 메머리에 얼라온 데이터 해석 방법을 알려줌
+		1,			// 속성 번호
+		3,			// 데이터 수 (vertex 당)
+		GL_FLOAT,	// 데이터 타입
+		GL_FALSE,	// 정규화 여부
+		0,			// STRIDE
+		0			// OFFSET
+	);
+	glEnableVertexAttribArray(1);	// 속성 1번 활성화
+
+	GLuint ibo_cube_elements;
+
+	glGenBuffers(1, &ibo_cube_elements);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo_cube_elements);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(cube_elements), cube_elements, GL_STATIC_DRAW);
+	//vao unbound
+	glBindVertexArray(0);		// 현재 사용중인 vao unbound (0을 넣으면 됨)
 
 
 	//	
@@ -233,87 +246,6 @@ void MyGlWindow::setupBuffer()
 	glEnableVertexArrayAttrib(vaoHandle, 1);		// 속성번호 1 활성화
 	*/
 
-	GLushort cube_elements[] = {
-	0, 1, 2,	2, 3, 0,	1, 5, 6,
-	6, 2, 1,	7, 6, 5,	5, 4, 7,
-	4, 0, 3,	3, 7, 4,	4, 5, 1,
-	1, 0, 4,	3, 2, 6,	6, 7, 3,
-	};
-
-	GLuint ibo_cube_elements;
-
-	//1. vao 생성
-	GLuint vbo_position;
-	GLuint vbo_color;
-	// glCreate.... -> DSA 방식
-	glCreateVertexArrays(1, &vaoHandle);
-	glCreateBuffers(1, &vbo_position);
-	glCreateBuffers(1, &vbo_color);
-
-	glCreateBuffers(1, &ibo_cube_elements); //Gluint ibo_cube_elements
-
-	// Position 처리
-	// GPU 메모리 할당
-	glNamedBufferData(vbo_position, sizeof(cube_vertices), cube_vertices, GL_STATIC_DRAW);
-	glVertexArrayVertexBuffer(
-		vaoHandle,					// vao
-		0,							// binding Index번호
-		vbo_position,				// vbo
-		0,							// Offset
-		sizeof(float) * 3			// Stride
-	);
-
-	// Color 처리
-	// GPU 메모리 할당
-	glNamedBufferData(vbo_color, sizeof(cube_colors), cube_colors, GL_STATIC_DRAW);
-	glVertexArrayVertexBuffer(
-		vaoHandle,					// vao
-		1,							// binding Index 번호
-		vbo_color,				// vbo
-		0,							// Offset
-		sizeof(float) * 3			// Stride
-	);
-
-	glNamedBufferData(ibo_cube_elements, sizeof(cube_elements), cube_elements, GL_STATIC_DRAW);
-	glVertexArrayVertexBuffer(
-		vaoHandle,					// vao
-		3,							// binding Index 번호
-		ibo_cube_elements,			// vbo
-		0,							// Offset
-		sizeof(float) * 3			// Stride
-	);
-
-
-	glVertexArrayAttribFormat(vaoHandle,
-		0,			// bindingIndex
-		3,			// vertex당 데이터 수
-		GL_FLOAT,
-		GL_FALSE,
-		0			//	offset
-	);
-
-	glVertexArrayAttribBinding(vaoHandle,
-		0,		// 속성번호
-		0		// binding index
-	);
-	glEnableVertexArrayAttrib(vaoHandle, 0);	//0번 속성 enable
-
-
-	glVertexArrayAttribFormat(vaoHandle,
-		1,			// bindingIndex
-		3,			// vertex당 데이터 수
-		GL_FLOAT,
-		GL_FALSE,
-		0			//	offset
-	);
-
-	glVertexArrayAttribBinding(vaoHandle,
-		1,		// 속성번호
-		1		// binding index
-	);
-	glEnableVertexArrayAttrib(vaoHandle, 1);	//0번 속성 enable
-
-	glVertexArrayElementBuffer(vaoHandle, ibo_cube_elements);
 
 }
 
@@ -339,10 +271,6 @@ void MyGlWindow::draw(void)
 	int size;
 	glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &size);
 	glDrawElements(GL_TRIANGLES, size / sizeof(GLushort), GL_UNSIGNED_SHORT, 0);
-
-	//3. call draw function
-	//glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);	//어떻게 그릴래?. 삼각형으로, 시작 인덱스, 끝 인덱스.
-	//glDrawArrays(GL_TRIANGLES, 1, 4);	//어떻게 그릴래?. 삼각형으로, 시작 인덱스, 끝 인덱스.
 
 	shaderProgram->disable();
 }

@@ -1,4 +1,4 @@
-//#define  FREEGLUT_LIB_PRAGMAS  0
+﻿//#define  FREEGLUT_LIB_PRAGMAS  0
 
 #include <iostream>
 #include <GL/gl3w.h>
@@ -12,12 +12,13 @@ public:
 	void draw();
 private:
 
-	
+
+	GLuint vaoHandle;
 	std::unique_ptr<ShaderProgram> shaderProgram;
 
 	int m_width;
 	int m_height;
-	
+
 	void setupBuffer();
 
 };
